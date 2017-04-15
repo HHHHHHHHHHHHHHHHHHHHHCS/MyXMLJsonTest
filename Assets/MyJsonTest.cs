@@ -13,17 +13,22 @@ public class MyJsonTest : MonoBehaviour
 
     void Awake()
     {
+
+    }
+
+    void Start()
+    {
         //Test1();
         //Test2();
         //Test3();
-        Test4();
+        //Test4();
     }
 
     void Test1()
     {
         Product product = new Product();
         product.Name = "Apple";
-        product.ExpiryDate = new DateTime(2008, 12, 28);
+        product.Expiry = new DateTime(2008, 12, 28);
         product.Price = 3.99M;
         product.Sizes = new string[] { "Small", "Medium", "Large" };
 
@@ -36,7 +41,7 @@ public class MyJsonTest : MonoBehaviour
     void Test2()
     {
         Product product = new Product();
-        product.ExpiryDate = new DateTime(2008, 12, 28);
+        product.Expiry = new DateTime(2008, 12, 28);
 
         JsonSerializer serializer = new JsonSerializer();
         serializer.Converters.Add(new JavaScriptDateTimeConverter());
@@ -69,6 +74,11 @@ public class MyJsonTest : MonoBehaviour
         Debug.Log( MyJsonManager.GetData("name"));
         MyJsonManager.UpdateData("name", "yoooooo");
         Debug.Log(MyJsonManager.GetData("name"));
+    }
+
+    void Test5()
+    {
+
     }
 
 }
