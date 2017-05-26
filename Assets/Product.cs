@@ -16,6 +16,8 @@ public class Product
     private string[] sizes3= { "Small" };
     private string[] sizes4= { "Small" };
 
+    private bool canSell;
+
     public string Name
     {
         get
@@ -120,9 +122,22 @@ public class Product
         }
     }
 
+    public bool CanSell
+    {
+        get
+        {
+            return canSell;
+        }
+
+        set
+        {
+            canSell = value;
+        }
+    }
+
     public override string ToString()
     {
-        return string.Format("Name:{0},ExpiryDate:{1},Price:{2},SizesCount:{3}"
-            , Name, Expiry, Price, Sizes==null?0: Sizes.Length);
+        return string.Format("Name:{0},ExpiryDate:{1},Price:{2},SizesCount:{3},CanSell:{4}"
+            , Name, Expiry, Price, Sizes==null?0: Sizes.Length,CanSell);
     }
 }

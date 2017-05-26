@@ -18,7 +18,7 @@ public class MyJsonTest : MonoBehaviour
 
     void Start()
     {
-        //Test1();
+        Test1();
         //Test2();
         //Test3();
         //Test4();
@@ -31,6 +31,7 @@ public class MyJsonTest : MonoBehaviour
         product.Expiry = new DateTime(2008, 12, 28);
         product.Price = 3.99M;
         product.Sizes = new string[] { "Small", "Medium", "Large" };
+        product.CanSell = true;
 
         string output = JsonConvert.SerializeObject(product);
         Debug.Log(output);
